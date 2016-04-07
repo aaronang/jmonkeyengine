@@ -65,6 +65,6 @@ public abstract class ParticleMesh extends Mesh {
      */
     public abstract void updateParticleData(Particle[] particles, Camera cam, Matrixable inverseRotation);
 
-    public abstract void setQuadraticFloat(Camera cam, Material material);
+    public void setQuadraticFloat(Camera cam, Material material) { }
 
 }

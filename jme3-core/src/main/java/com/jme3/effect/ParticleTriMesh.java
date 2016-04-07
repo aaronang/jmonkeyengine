@@ -286,7 +286,4 @@ public class ParticleTriMesh extends ParticleMesh {
         cvb.updateData(colors);
     }
 
-    @Override
-    public void setQuadraticFloat(Camera cam, Material material) { }
-
 }
