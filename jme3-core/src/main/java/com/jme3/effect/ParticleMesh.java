@@ -31,6 +31,7 @@
  */
 package com.jme3.effect;
 
+import com.jme3.material.Material;
 import com.jme3.material.RenderState;
 import com.jme3.math.Matrixable;
 import com.jme3.renderer.Camera;
@@ -43,24 +44,6 @@ import com.jme3.scene.Mesh;
  * @author Kirill Vainer
  */
 public abstract class ParticleMesh extends Mesh {
-
-    /**
-     * Type of particle mesh
-     */
-    public enum Type {
-        /**
-         * The particle mesh is composed of points. Each particle is a point.
-         * This can be used in conjuction with {@link RenderState#setPointSprite(boolean) point sprites}
-         * to render particles the usual way.
-         */
-        Point,
-        
-        /**
-         * The particle mesh is composed of triangles. Each particle is 
-         * two triangles making a single quad.
-         */
-        Triangle;
-    }
 
     /**
      * Initialize mesh data.
@@ -81,5 +64,7 @@ public abstract class ParticleMesh extends Mesh {
      * Update the particle visual data. Typically called every frame.
      */
     public abstract void updateParticleData(Particle[] particles, Camera cam, Matrixable inverseRotation);
+
+    public abstract void setQuadraticFloat(Camera cam, Material material);
 
 }

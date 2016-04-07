@@ -31,6 +31,7 @@
  */
 package com.jme3.effect;
 
+import com.jme3.material.Material;
 import com.jme3.math.FastMath;
 import com.jme3.math.Matrixable;
 import com.jme3.math.Vector3f;
@@ -284,5 +285,8 @@ public class ParticleTriMesh extends ParticleMesh {
         pvb.updateData(positions);
         cvb.updateData(colors);
     }
+
+    @Override
+    public void setQuadraticFloat(Camera cam, Material material) { }
 
 }
