@@ -324,14 +324,12 @@ public class MatrixTest {
 	@Test
 	public void testSetQuaternion() {
 		float[] data1 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 };
-		Quaternion data2 = new Quaternion(0, 0, 0, 0);
-		float[][] expected = { { (float) 10.34408, 0, 0, 13 }, { 0, (float) 11.83216, 0, 14 },
-				{ 0, 0, (float) 13.379088, 15 }, { 4, 8, 12, 16 } };
+		Quaternion data2 = new Quaternion(1, 2, 3, 4);
+		float[][] expected = {{0.13333333f,-0.66666675f,0.73333335f ,13.0f},{0.9333334f,0.3333333f , 0.13333336f,14.0f },{ -0.33333334f, 0.66666675f , 0.6666666f,15.0f },{4.0f,8.0f,12.0f ,16.0f }};
 
 		Matrixable matrix_test = new Matrix(data1);
 
 		matrix_test.set(data2);
-
 		assertArrayEquals(expected, matrix_test.getMatrix());
 	}
 
@@ -833,8 +831,9 @@ public class MatrixTest {
 		float[] data1 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 };
 		Matrixable matrix_test = new Matrix(data1);
 		
-		Quaternion expected = new Quaternion((float)0.030060045, (float)-0.1420475, (float)-0.06684814, (float)0.7650391);
+		Quaternion expected = new Quaternion((float)0.029251702,(float) -0.09027569,(float) 0.018377202, (float)0.78618026);
 		Quaternion test = matrix_test.toRotationQuat();
+		
 		assertEquals(test, expected);
 	}
 
@@ -843,9 +842,11 @@ public class MatrixTest {
 		float[] data1 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 };
 		Matrixable matrix_test = new Matrix(data1);
 		
-		Quaternion expected = new Quaternion((float)0.030060045, (float)-0.1420475, (float)-0.06684814, (float)0.7650391);
+		Quaternion expected = new Quaternion(0.029251702f, -0.09027569f, 0.018377202f, 0.78618026f);
 		Quaternion test = new Quaternion();
 		matrix_test.toRotationQuat(test);
+		
+		System.out.println(test);
 		assertEquals(test, expected);
 	}
 
