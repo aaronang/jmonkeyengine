@@ -2123,7 +2123,6 @@ public final class Matrix  implements Savable, Cloneable, java.io.Serializable
     
     static boolean equalIdentity(Matrix mat) 
     {
-    	Matrix identity = new Matrix(mat.M);
         return mat.isIdentity();
     }  
     
