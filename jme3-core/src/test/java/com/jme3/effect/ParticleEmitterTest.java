@@ -1,7 +1,7 @@
 package com.jme3.effect;
 
 import com.jme3.material.Material;
-import com.jme3.math.Matrix4f;
+import com.jme3.math.Matrixable;
 import com.jme3.renderer.Camera;
 import com.jme3.renderer.RenderManager;
 import com.jme3.renderer.ViewPort;
