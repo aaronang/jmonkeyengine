@@ -19,7 +19,7 @@ public class Vector implements Vectorable {
     public Vectorable addLocal(Vectorable v) {
         checkEqualVectorLength(v);
         for (int i = 0; i < vector.length; i++)
-            vector[i] += get(i) + v.get(i);
+            vector[i] = get(i) + v.get(i);
         return this;
     }
 
@@ -187,6 +187,18 @@ public class Vector implements Vectorable {
         for (int i = 0; i < vector.length; i++)
             vector[i] = 0;
         return this;
+    }
+
+    public boolean equals(Object o) {
+        Vectorable that;
+        if (o instanceof Vectorable)
+            that = (Vectorable) o;
+        else return false;
+        for (int i = 0; i < vector.length; i++)
+            if (get(i) != that.get(i))
+                return false;
+
+        return true;
     }
 
 }
